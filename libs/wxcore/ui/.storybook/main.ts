@@ -57,7 +57,7 @@ const config: StorybookConfig = {
             // search up for workspace root
             searchForWorkspaceRoot(process.cwd()),
             // your custom rules
-            '/Users/mtrang/work/tech-okr/wxcore/node_modules/@fontsource/roboto/files',
+            '/Users/mtrang/dev/tech-okr/wxcore/node_modules/@fontsource/roboto/files',
           ],
         },
       },

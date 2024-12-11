@@ -6,7 +6,7 @@ import { MyButton } from './MyButton';
 
 const meta: Meta<typeof MyButton> = {
   component: MyButton,
-  title: 'Example/MyButton',
+  title: 'WxCoreUI/Components/MyButton',
 };
 export default meta;
 type Story = StoryObj<typeof MyButton>;
