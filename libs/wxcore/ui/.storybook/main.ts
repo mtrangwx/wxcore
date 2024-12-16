@@ -7,8 +7,8 @@ const config: StorybookConfig = {
     '../src/stories/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'
   ],
   addons: [
-    '@storybook/addon-a11y', 
-    '@storybook/addon-essentials', 
+    '@storybook/addon-a11y',
+    '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-links',
     '@storybook/addon-themes'
@@ -42,7 +42,7 @@ const config: StorybookConfig = {
   },
   async viteFinal(config, { configType }) {
     const { mergeConfig, searchForWorkspaceRoot } = await import('vite');
- 
+
     // if (configType === 'DEVELOPMENT') {
     //   // Your development configuration goes here
     // }
@@ -58,6 +58,7 @@ const config: StorybookConfig = {
             searchForWorkspaceRoot(process.cwd()),
             // your custom rules
             '/Users/mtrang/dev/tech-okr/wxcore/node_modules/@fontsource/roboto/files',
+            '/Users/mtrang/dev/tech-okr/wxcore/node_modules/@woolworthslimited/core-tokens/dist/core/css/tokens.css',
           ],
         },
       },

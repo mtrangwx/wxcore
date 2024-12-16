@@ -4,7 +4,7 @@ import { MyButton } from '@wxcore/ui';
 export function App() {
   return (
     <div>
-      <MyButton />
+      <MyButton label='Check Out' variant='contained'  />
     </div>
   );
 }

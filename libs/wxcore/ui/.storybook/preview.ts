@@ -1,4 +1,4 @@
-/* eslint-disable @nx/enforce-module-boundaries */
+
 import type { Preview } from "@storybook/react";
 
 // import '../../../../node_modules/@fontsource/roboto/300.css';
@@ -13,24 +13,11 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import '@fontsource/material-icons';
 
+import '@woolworthslimited/core-tokens/dist/core/css/tokens.css';
 
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { withThemeFromJSXProvider } from '@storybook/addon-themes';
-import { lightTheme, darkTheme } from '../src/themes';
+import { globalDecorators } from './decorators';
 
-/* snipped for brevity */
-
-export const decorators = [
-  withThemeFromJSXProvider({
-    themes: {
-      light: lightTheme,
-      dark: darkTheme,
-    },
-    defaultTheme: 'light',
-    Provider: ThemeProvider,
-    GlobalStyles: CssBaseline,
-  }),
-];
+export const decorators = globalDecorators;
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -42,6 +29,27 @@ export const parameters = {
     },
   },
 };
+
+// export const globalTypes = {
+//   theme: {
+//     name: 'Theme',
+//     description: 'Set the color theme',
+//     defaultValue: 'light',
+//     toolbar: {
+//       // show the theme name once selected in the toolbar
+//       dynamicTitle: true,
+//       items: [
+//         { value: 'light', right: '⚪️', title: 'Light' },
+//         { value: 'dark', right: '⚫️', title: 'Dark' },
+//         { value: 'acqua', right: '🔵', title: 'Acqua' },
+//         // { value: 'fira', right: '🔴', title: 'Fira' },
+//         // { value: 'terra', right: '🟠', title: 'Terra' },
+//         // { value: 'side-by-side', icon: 'sidebaralt', title: 'all side by side' },
+//         // { value: 'stacked', icon: 'bottombar', title: 'all stacked' },
+//       ],
+//     },
+//   },
+// }
 
 const preview: Preview = {
   parameters
