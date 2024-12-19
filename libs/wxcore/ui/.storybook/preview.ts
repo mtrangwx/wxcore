@@ -1,12 +1,6 @@
 
 import type { Preview } from "@storybook/react";
 
-// import '../../../../node_modules/@fontsource/roboto/300.css';
-// import '../../../../node_modules/@fontsource/roboto/400.css';
-// import '../../../../node_modules/@fontsource/roboto/500.css';
-// import '../../../../node_modules/@fontsource/roboto/700.css';
-// import '../../../../node_modules/@fontsource/material-icons';
-
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -30,26 +24,42 @@ export const parameters = {
   },
 };
 
-// export const globalTypes = {
-//   theme: {
-//     name: 'Theme',
-//     description: 'Set the color theme',
-//     defaultValue: 'light',
-//     toolbar: {
-//       // show the theme name once selected in the toolbar
-//       dynamicTitle: true,
-//       items: [
-//         { value: 'light', right: '⚪️', title: 'Light' },
-//         { value: 'dark', right: '⚫️', title: 'Dark' },
-//         { value: 'acqua', right: '🔵', title: 'Acqua' },
-//         // { value: 'fira', right: '🔴', title: 'Fira' },
-//         // { value: 'terra', right: '🟠', title: 'Terra' },
-//         // { value: 'side-by-side', icon: 'sidebaralt', title: 'all side by side' },
-//         // { value: 'stacked', icon: 'bottombar', title: 'all stacked' },
-//       ],
-//     },
-//   },
-// }
+type Brand = { brand: string, title: string; emoji: string };
+const brands: Brand[]  = [
+  {
+    brand: 'woolworths',
+    title: 'Woolworths',
+    emoji: '🟢',
+  },
+  {
+    brand: 'everyday',
+    title: 'Everyday',
+    emoji: '🟠',
+  },
+  {
+    brand: 'bigw',
+    title: 'BigW',
+    emoji: '🔵',
+  },
+]
+
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Set the brand color theme',
+    defaultValue: 'woolworths',
+    toolbar: {
+      icon: 'paintbrush',
+      // show the theme name once selected in the toolbar
+      dynamicTitle: true,
+      items: brands.map(({brand, title, emoji}) => ({
+        value: brand,
+        title,
+        right: emoji,
+      })),
+    },
+  },
+}
 
 const preview: Preview = {
   parameters
